@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABBESTUDIO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* Asegúrate de que la imagen esté correctamente referenciada */
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            z-index: -1; /* Asegura que la imagen esté en el fondo */
+        }
+
+        
+          .navbar {
+            background-color: rgba(0, 0, 0, 0.3); /* Transparente */
+        }
+
+        .navbar .nav-link,
+        .navbar .dropdown-item {
+            color: #fff;
+        }
+
+        .navbar .nav-link:hover,
+        .navbar .dropdown-item:hover {
+            color: #d0ff3d; /* Verde neón */
+        }
+
+        /* Dropdown styling */
+        .dropdown-menu {
+            background-color: rgba(0, 0, 0, 0.8); /* Fondo transparente */
+            border: none;
+        }
+
+        .dropdown-item {
+            color: #000; /* Letras en negro */
+        }
+
+        .dropdown-item:hover {
+            background-color: rgba(208, 255, 61, 0.2); /* Fondo con transparencia */
+            color: #d0ff3d; /* Verde neón */
+        }
+
+        .content {
+            padding-top: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .cards-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .card {
+            width: 800px;
+            height: auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background-color: #1f1f1f;
+            border-radius: 10px;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .btn {
+            background-color: #d0ff3d;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 0px;
+        }
+
+        .btn:hover {
+            background-color: #b1e536;
+        }
+
+        .search-bar {
+            border-radius: 20px;
+            padding: 5px 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 1px solid #fff;
+        }
+
+        .search-bar:focus {
+            outline: none;
+        }
+
+        .banner-container {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .capsule {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px 0;
+        }
+
+        .capsule h6 {
+            color: #d0ff3d;
+        }
+
+        .capsule p {
+            color: #fff;
+			
+        }
+	
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    color: #d0ff3d;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 3rem;
+    text-align: center;
+    animation: fadeIn 2s ease-out; /* Animación aplicada */
+}
+ /* Estilo footer */
+        footer {
+            background: #000;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: #d0ff3d;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Fondo de la imagen -->
+<div class="background-image" style="C:\Users\abiga\Downloads\ABBE STUDIO WEB-20241115T192948Z-001\ABBE STUDIO WEB\Orion Brandbook 2024 - Abbe Desings (720p, h264, youtube).mp4"></div> <!-- Asegúrate de poner la ruta correcta de la imagen -->
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-md sticky-top border-bottom">
+    <div class="container">
+        <!-- Replace the text with an image -->
+        <a class="navbar-brand" href="Index.html">
+            <img src="Recurso 3-8.png" alt="ABBE Studio" style="height: 40px;"> <!-- Adjust height as needed -->
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item ms-1"><a class="nav-link" href="Index.html">Inicio</a></li>
+                <li class="nav-item ms-1"><a class="nav-link" href="Quiensoy.html">Quién Soy?</a></li>
+                <li class="nav-item ms-1"><a class="nav-link" href="https://ko-fi.com/meimeidesings">Tienda</a></li>
+                <li class="nav-item dropdown ms-1">
+                    <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Portafolio
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="Branding.html">Branding</a></li>
+                        <li><a class="dropdown-item" href="Editorial.html">Editorial</a></li>
+                        <li><a class="dropdown-item" href="Publicidad.html">Publicidad</a></li>
+                        <li><a class="dropdown-item" href="Ilustración.html">Ilustración</a></li>
+                        <li><a class="dropdown-item" href="Multimedia.html">Multimedia</a></li>
+                        <li><a class="dropdown-item" href="Fotografia.html">Fotografía</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item ms-1"><a class="nav-link" href="Contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<main class="content">
+    <!-- Main Content -->
+    <section class="main-content">
+        <div class="banner-container">
+      <div class="banner-container text-center" style="background-color: rgba(0, 0, 0, 0.2); padding: 1px; border-radius: 10px; width: 80%; margin: 0 auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+    <h1 style="color: #d0ff3d; text-transform: uppercase; font-weight: bold; font-size: 3rem; text-align: center;">Branding</h1>
+            <p>El branding se centra en crear una identidad visual única para las marcas, estableciendo su personalidad y valores a través de un diseño coherente y memorable que conecta con su público objetivo.</p>
+        </div>
+
+        <!-- Cards -->
+        <div class="cards-container">
+            <!-- Card 1 -->
+            <div class="card">
+                <h3><strong>ABBE STUDIO</strong></h3>
+                <p>Es mi marca personal, donde desarrollo mi identidad visual como Abigail Bermúdez.&nbsp; &nbsp;</p>
+                <div class="dropdown">
+                    <video width="100%" height="100%" controls>
+                        <source src="Diseño sin título.mp4" type="video/mp4">
+                        Tu navegador no soporta el video.
+                    </video>
+                </div>
+               
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <h3><strong>ORION</strong></h3>
+                <p>El brandbook de Orion define su identidad visual, incluyendo logotipo, colores y tipografía, para asegurar coherencia en su representación.&nbsp;</p>
+                <div class="dropdown">
+                    <video width="100%" height="100%" controls>
+                        <source src="Orion Brandbook 2024 - Abbe Desings (720p, h264, youtube).mp4" type="video/mp4">
+                        Tu navegador no soporta el video.
+                    </video>
+                </div>
+               
+            </div>
+        </div>
+
+
+
+<!-- Footer -->
+<footer>
+    © 2024 ABBEstudio
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABBEstudio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Estilo general */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+
+          .navbar {
+            background-color: rgba(0, 0, 0, 0.3); /* Transparente */
+        }
+
+        .navbar .nav-link,
+        .navbar .dropdown-item {
+            color: #fff;
+        }
+
+        .navbar .nav-link:hover,
+        .navbar .dropdown-item:hover {
+            color: #d0ff3d; /* Verde neón */
+        }
+
+        /* Dropdown styling */
+        .dropdown-menu {
+            background-color: rgba(0, 0, 0, 0.8); /* Fondo transparente */
+            border: none;
+        }
+
+        .dropdown-item {
+            color: #000; /* Letras en negro */
+        }
+
+        .dropdown-item:hover {
+            background-color: rgba(208, 255, 61, 0.2); /* Fondo con transparencia */
+            color: #d0ff3d; /* Verde neón */
+        }
+        /* Carrusel de imágenes */
+        .carousel-item {
+            position: relative;
+            height: 100vh;
+            background-color: #17184b;
+        }
+
+        .carousel-item img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+
+        .carousel-caption {
+            position: absolute;
+            bottom: 30px;
+            left: 20px;
+            text-align: left;
+            color: #fff;
+            font-size: 2rem;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .carousel-caption p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        .carousel-caption a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 29px; /* Reduce padding */
+    font-size: 1rem; /* Make the text smaller */
+    border: 2px solid #d0ff3d;
+    color: #d0ff3d;
+    text-decoration: none;
+    border-radius: 3px; /* Make the corners less rounded */
+    transition: background 0.2s, color 0.3s;
+}
+
+.carousel-caption a:hover {
+    background: #d0ff3d;
+    color: #000;
+        }
+
+        /* Animación fadeIn */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Estilo footer */
+        footer {
+            background: #000;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: #d0ff3d;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-md sticky-top border-bottom">
+    <div class="container">
+        <!-- Replace the text with an image -->
+        <a class="navbar-brand" href="Index.html">
+            <img src="Recurso 3-8.png" alt="ABBE Studio" style="height: 40px;"> <!-- Adjust height as needed -->
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item ms-1"><a class="nav-link" href="Index.html">Inicio</a></li>
+                <li class="nav-item ms-1"><a class="nav-link" href="Quiensoy.html">Quién Soy?</a></li>
+                <li class="nav-item ms-1"><a class="nav-link" href="https://ko-fi.com/meimeidesings">Tienda</a></li>
+                <li class="nav-item dropdown ms-1">
+                    <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Portafolio
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="Branding.html">Branding</a></li>
+                        <li><a class="dropdown-item" href="Editorial.html">Editorial</a></li>
+                        <li><a class="dropdown-item" href="Publicidad.html">Publicidad</a></li>
+                        <li><a class="dropdown-item" href="Ilustración.html">Ilustración</a></li>
+                        <li><a class="dropdown-item" href="Multimedia.html">Multimedia</a></li>
+                        <li><a class="dropdown-item" href="Fotografia.html">Fotografía</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item ms-1"><a class="nav-link" href="Contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Carrusel de imágenes -->
+<div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="1x\Recurso 25.png" alt="Slide 1">
+            <div class="carousel-caption">
+                <h3>Cada señal es una oportunidad para una historia.</h3>
+                <p>Comienza con una idea...</p>
+                <a href="Contacto.html">Contáctame</a>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="1x\1x\Recurso 27.png" alt="Slide 2">
+            <div class="carousel-caption">
+                <h3>Empezamos con una idea...</h3>
+                <p>Descubramos hacia dónde nos lleva.</p>
+                <a href="#contact">Contáctame</a>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="1x\1x\Panama.png" alt="Slide 3">
+            <div class="carousel-caption">
+                <h3>Descubramos a dónde llega.</h3>
+                <p>El futuro es creativo.</p>
+                <a href="#contact">Contáctame</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    © 2024 ABBEstudio
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

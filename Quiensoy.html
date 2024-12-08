@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABBEstudio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Estilo general */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+
+          .navbar {
+            background-color: rgba(0, 0, 0, 0.3); /* Transparente */
+        }
+
+        .navbar .nav-link,
+        .navbar .dropdown-item {
+            color: #fff;
+        }
+
+        .navbar .nav-link:hover,
+        .navbar .dropdown-item:hover {
+            color: #d0ff3d; /* Verde neón */
+        }
+
+        /* Dropdown styling */
+        .dropdown-menu {
+            background-color: rgba(0, 0, 0, 0.8); /* Fondo transparente */
+            border: none;
+        }
+
+        .dropdown-item {
+            color: #000; /* Letras en negro */
+        }
+
+        .dropdown-item:hover {
+            background-color: rgba(208, 255, 61, 0.2); /* Fondo con transparencia */
+            color: #d0ff3d; /* Verde neón */
+        }
+        /* Carrusel de imágenes */
+        .carousel-item {
+            position: relative;
+            height: 100vh;
+            background-color: #17184b;
+        }
+
+        .carousel-item img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+
+        .carousel-caption {
+            position: absolute;
+            bottom: 30px;
+            left: 20px;
+            text-align: left;
+            color: #fff;
+            font-size: 2rem;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .carousel-caption p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        .carousel-caption a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 29px; /* Reduce padding */
+    font-size: 1rem; /* Make the text smaller */
+    border: 2px solid #d0ff3d;
+    color: #d0ff3d;
+    text-decoration: none;
+    border-radius: 3px; /* Make the corners less rounded */
+    transition: background 0.3s, color 0.3s;
+}
+
+.carousel-caption a:hover {
+    background: #d0ff3d;
+    color: #000;
+        }
+
+        /* Animación fadeIn */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+/* Animación para el título Branding */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    color: #d0ff3d;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 3rem;
+    text-align: center;
+    animation: fadeIn 2s ease-out; /* Animación aplicada */
+}
+        /* Estilo footer */
+        footer {
+            background: #000;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: #d0ff3d;
+            text-decoration: none;
+        }
+		  .cards-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .card {
+            width: 800px;
+            height: auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background-color: #1f1f1f;
+            border-radius: 10px;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .btn {
+            background-color: #d0ff3d;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 0px;
+        }
+
+        .btn:hover {
+            background-color: #b1e536; 
+        }
+
+        /* Tabla con dos columnas */
+        .profile-table {
+            display: table;
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        .profile-row {
+            display: table-row;
+        }
+
+        .profile-column {
+            display: table-cell;
+            width: 50%;
+            vertical-align: top;
+        }
+
+        .profile-column img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Cuadro de contenido a la derecha */
+        .right-content {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+        }
+
+        /* Barra de habilidades */
+        .skill-bar {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .skill-bar div {
+            height: 20px;
+            border-radius: 10px;
+            text-align: left;
+            padding-left: 10px;
+            line-height: 20px;
+            font-weight: bold;
+        }
+
+        .skill-bar .english {
+            width: 100%;
+            background-color: #d0ff3d;
+            color: #000;
+        }
+
+        .skill-bar .spanish {
+            width: 70%;
+            background-color: #d0ff3d;
+            color: #000;
+        }
+
+        .skill-bar .german {
+            width: 20%;
+            background-color: #d0ff3d;
+            color: #000;
+        }
+
+        /* Estilo para las Cards */
+        .cards-section {
+            padding: 50px 15px;
+            text-align: center;
+            background-color: #000000;
+        }
+
+        .cards-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .card h3 {
+            margin-top: 10px;
+            font-size: 1.5rem;
+        }
+
+        .card p {
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+
+        .card .btn-saber-mas {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #d0ff3d;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .card .btn-saber-mas:hover {
+            background-color: #a0e736;
+        }
+
+        .card .btn-saber-mas:active {
+            background-color: #7dc235;
+        }.buttons-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn-image {
+    background: none; /* Quita el fondo predeterminado del botón */
+    border: none; /* Quita el borde del botón */
+    padding: 0; /* Elimina el padding extra */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para la animación */
+}
+
+.btn-image img {
+    width: 100px; /* Establece el tamaño de las imágenes */
+    height: 100px; /* Establece el tamaño de las imágenes */
+    object-fit: cover; /* Asegura que la imagen cubra todo el área del botón */
+    border-radius: 10px; /* Opcional: hace las esquinas redondeadas */
+}
+
+.btn-image:hover {
+    transform: scale(1.1); /* Efecto de zoom al pasar el ratón */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agrega una sombra para el efecto de profundidad */
+}  /* Estilo para la imagen de fondo animada */
+        .background-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            animation: slide 10s infinite linear; /* Animación de movimiento continuo */
+        }
+.abbe-title {
+    font-weight: bold;
+    color: #d0ff3d; /* Verde neón */
+    text-align: center;
+    font-size: 4rem; /* Aumentamos el tamaño del texto */
+    margin-top: 50px;
+}
+			
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-md sticky-top border-bottom">
+    <div class="container">
+        <!-- Replace the text with an image -->
+        <a class="navbar-brand" href="#">
+            <img src="Recurso 3-8.png" alt="ABBE Studio" style="height: 40px;"> <!-- Adjust height as needed -->
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item ms-1"><a class="nav-link" href="Index.html">Inicio</a></li>
+                <li class="nav-item ms-1"><a class="nav-link" href="Quiensoy.html">Quién Soy?</a></li>
+                <li class="nav-item ms-1"><a class="nav-link" href="https://ko-fi.com/meimeidesings">Tienda</a></li>
+                <li class="nav-item dropdown ms-1">
+                    <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Portafolio
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="Branding.html">Branding</a></li>
+                        <li><a class="dropdown-item" href="Editorial.html">Editorial</a></li>
+                        <li><a class="dropdown-item" href="Publicidad.html">Publicidad</a></li>
+                        <li><a class="dropdown-item" href="Ilustración.html">Ilustración</a></li>
+                        <li><a class="dropdown-item" href="Multimedia.html">Multimedia</a></li>
+                        <li><a class="dropdown-item" href="Fotografia.html">Fotografía</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item ms-1"><a class="nav-link" href="Contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main class="content">
+    <img src="C:\Users\abiga\Downloads\ABBE STUDIO WEB-20241115T192948Z-001\ABBE STUDIO WEB\Botones 2\1x\Recurso 21.png" 
+         class="background-image" alt="" 
+         style="height: 110vh; object-fit: cover;" /> 
+
+<!-- Contenido principal -->
+<div class="content" style="margin: 20px;">
+    <table class="profile-table" style="width: 100%; margin: 20px;">
+        <tr class="profile-row">
+            <td class="profile-column" style="width: 60%; padding-right: 20px; text-align: justify;">
+           <div class="abbe-container">
+    <h1 class="abbe-title">ABBE STUDIO</h1>
+                <p class="lead">
+                    ¡Hola! Soy Abigail, una diseñadora gráfica, ilustradora y animadora apasionada por crear impacto visual y emocional. Me especializo en arte digital, branding y comunicación creativa, con un enfoque en soluciones que inspiren y resalten la identidad de cada proyecto. Mi compromiso con la excelencia y la autenticidad me ha llevado a trabajar en áreas como ilustración editorial, animación y diseño de personajes, desarrollando conceptos visuales que conectan y comunican con fuerza. A través de una constante exploración, creo ilustraciones y diseños que emocionan, destacan y transforman ideas en experiencias visuales.
+                </p>
+				
+<!-- Botones debajo del texto -->
+<div class="buttons-container">
+    <button class="btn-image">
+        <img src="Botones 2/1x/Recurso 13.png" width="100" height="100" alt="Recurso 13">
+    </button>
+    <button class="btn-image">
+        <img src="Botones 2/1x/Recurso 14.png" width="100" height="100" alt="Recurso 14">
+    </button>
+    <button class="btn-image">
+        <img src="Botones 2/1x/Recurso 15.png" width="100" height="100" alt="Recurso 15">
+    </button>
+    <button class="btn-image">
+        <img src="Botones 2/1x/Recurso 16.png" width="100" height="100" alt="Recurso 16">
+    </button>
+    <button class="btn-image">
+        <img src="Botones 2/1x/Recurso 17.png" width="100" height="100" alt="Recurso 17">
+    </button>
+	 <button class="btn-image">
+        <img src="Botones 2\1x\Recurso 12.png" width="100" height="100" alt="Recurso 12">
+    </button>
+	 
+</div>
+
+            </td>
+            <td style="width: 40%; padding-left: 20px; text-align: justify;">
+                <div class="timeline-event">
+                    <h5><strong>FORMACIÓN ACADÉMICA</strong></h5>
+                    <p><strong>Licenciatura Diseño Gráfico</strong>, Universidad de Panamá. <br>
+                        Panamá, Febrero 2022 - Actualmente.</p>
+                    <p><strong>Diplomado en Animación A22</strong>, Centro Iberoamericano de Foto, Cine y Animación. <br>
+                        120 horas, México 15 de enero - 23 julio 2022.</p>
+                </div>
+                <div class="timeline-event">
+                    <h5>FORMACIÓN PROFESIONAL</h5>
+                    <p><strong>Certificaciones:</strong></p>
+                    <ul>
+                        <li>Creación de Personajes Manga Digital, Domestika.</li>
+                        <li>Adobe Photoshop, Adobe Illustrator, Video Editing, Adobe XD, etc.</li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<style>
+    /* Estilo general */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Botones debajo del texto */
+    .buttons-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .btn-square {
+        width: 100px;
+        height: 100px;
+        background-color: #d0ff3d;
+        border: none;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: transform 0.3s, box-shadow 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Estilo para los botones con imagen */
+    .btn-square img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Efecto de escala en los botones al hacer clic */
+    .btn-square:active {
+        transform: scale(0.95);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Justificar los textos en ambas columnas */
+    .profile-column, .timeline-event {
+        text-align: justify;
+    }
+
+    /* Sección de Cards */
+    .cards-section {
+        padding: 50px 15px;
+        text-align: center;
+        background-color: #000000;
+    }
+
+    .cards-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+    }
+
+ .cards-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se ajusten en varias filas */
+    justify-content: space-between; /* Asegura que las tarjetas estén bien distribuidas */
+    gap: 20px; /* Espacio entre las tarjetas */
+}
+
+/* Ajuste de las tarjetas */
+.card {
+    width: 30%; /* 3 tarjetas por fila */
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+    margin-bottom: 20px; /* Añadido margen en la parte inferior para las filas */
+}
+
+/* Efecto hover en las tarjetas */
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+}
+    }
+
+    .card h3 {
+        margin-top: 10px;
+        font-size: 1.5rem;
+    }
+
+    .card p {
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+
+    /* Estilo para el botón "Saber más" */
+    .card .btn-saber-mas {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 20px;
+        background-color: #d0ff3d;
+        color: black;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background-color 0.3s;
+    }
+
+    /* Cambio de color al pasar el ratón sobre el botón */
+    .card .btn-saber-mas:hover {
+        background-color: #a0e736;
+    }
+
+    /* Efecto al hacer clic en el botón */
+    .card .btn-saber-mas:active {
+        background-color: #7dc235;
+    }
+</style>
+
+<body>
+	
+    <!-- Sección de Cards -->
+    <div class="cards-section">
+        <h2><strong>Contenido</strong></h2>
+        <div class="card-container">
+          <!-- Card 1 -->
+<div class="card">
+    <img src="C:\Users\abiga\Downloads\ABBE STUDIO WEB-20241115T192948Z-001\ABBE STUDIO WEB\Botones 1\1x\Recurso 4.png" alt="Imagen Card 1">
+    <h3><strong>Branding</strong></h3>
+    <p>Me especializo en crear identidades visuales impactantes que reflejan la esencia de tu marca, usando diseño, tipografía y estética para hacerla destacar.</p>
+    <a class="btn-saber-mas" href="Branding.html">Saber más</a>
+</div>
+
+<!-- Card 2 -->
+<div class="card">
+    <img src="C:\Users\abiga\Downloads\ABBE STUDIO WEB-20241115T192948Z-001\ABBE STUDIO WEB\Botones 1\1x\Recurso 5.png" alt="Imagen Card 2">
+    <h3><strong>Editorial&nbsp;</strong></h3>
+    <p>Me enfocaré en crear diseños editoriales atractivos y funcionales, donde cada página resalte visualmente y sea fácil de leer.</p>
+    <a class="btn-saber-mas" href="Editorial.html">Saber más</a>
+</div>
+
+<!-- Card 3 -->
+<div class="card">
+    <img src="C:\Users\abiga\Downloads\ABBE STUDIO WEB-20241115T192948Z-001\ABBE STUDIO WEB\Botones 1\1x\Recurso 6.png" alt="Imagen Card 3">
+    <h3><strong>Publicidad</strong></h3>
+    <p>Diseñaré piezas publicitarias que capturan la atención de tu público objetivo, asegurando que tu mensaje se comunique de forma efectiva y memorable.</p>
+    <a class="btn-saber-mas" href="Publicidad.html">Saber más</a>
+</div>
+
+<!-- Card 4 -->
+<div class="card">
+    <img src="C:\Users\abiga\Downloads\ABBE STUDIO WEB-20241115T192948Z-001\ABBE STUDIO WEB\Botones 1\1x\Recurso 7.png" alt="Imagen Card 4">
+    <h3><strong>Ilustración</strong></h3>
+    <p>Crearé ilustraciones personalizadas que cuenten la historia de tu marca, adaptadas a tus necesidades y con un toque único y creativo.</p>
+    <a class="btn-saber-mas" href="Ilustración.html">Saber más</a>
+</div>
+
+<!-- Card 5 -->
+<div class="card">
+    <img src="C:\Users\abiga\Downloads\ABBE STUDIO WEB-20241115T192948Z-001\ABBE STUDIO WEB\Botones 1\1x\Recurso 8.png" alt="Imagen Card 5">
+    <h3><strong>Multimedia</strong></h3>
+    <p>Diseñaré experiencias interactivas que fusionan gráficos, animaciones y funcionalidad para hacer tu proyecto más dinámico y atractivo.</p>
+    <a class="btn-saber-mas" href="Multimedia.html">Saber más</a>
+</div>
+
+<!-- Card 7 -->
+<div class="card">
+    <img src="C:\Users\abiga\Downloads\ABBE STUDIO WEB-20241115T192948Z-001\ABBE STUDIO WEB\Botones 1\1x\Recurso 10.png" alt="Imagen Card 7">
+    <h3><strong>Fotografía</strong></h3>
+    <p>Capturaré imágenes que transmiten emociones y cuentan historias, con un enfoque técnico y artístico para ofrecer resultados excepcionales.</p>
+    <a class="btn-saber-mas" href="Fotografia.html">Saber más</a>
+</div>
+
+    <script>
+        // Añadir efecto para cambiar el color de los botones al hacer clic
+        const buttons = document.querySelectorAll('.btn-saber-mas');
+        buttons.forEach(button => {
+            button.addEventListener('click', function() {
+                this.style.backgroundColor = '#7dc235'; // Cambio a verde al hacer clic
+            });
+        });<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+ 
+<!-- Footer -->
+<footer>
+    © 2024 ABBEstudio
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

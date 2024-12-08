@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABBESTUDIO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            height: 100vh;
+            position: relative;
+        }
+
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar .nav-link,
+        .navbar .dropdown-item {
+            color: #fff;
+        }
+
+        .navbar .nav-link:hover,
+        .navbar .dropdown-item:hover {
+            color: #d0ff3d;
+        }
+
+        .dropdown-menu {
+            background-color: rgba(0, 0, 0, 0.8);
+            border: none;
+        }
+
+        .dropdown-item {
+            color: #000;
+        }
+
+        .dropdown-item:hover {
+            background-color: rgba(208, 255, 61, 0.2);
+            color: #d0ff3d;
+        }
+
+        .content {
+            padding-top: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .cards-container {
+            display: flex;
+            justify-content: space-between; /* Cambio aquí */
+            margin-top: 30px;
+        }
+
+        .card {
+            width: 45%; /* Ajusta el tamaño de las cards */
+            height: auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background-color: #1f1f1f;
+            border-radius: 10px;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .btn {
+            background-color: #d0ff3d;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 0px;
+        }
+
+        .btn:hover {
+            background-color: #b1e536;
+        }
+
+        .banner-container {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .capsule {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px 0;
+        }
+
+        .capsule h6 {
+            color: #d0ff3d;
+        }
+
+        .capsule p {
+            color: #fff;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #d0ff3d;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 3rem;
+            text-align: center;
+            animation: fadeIn 2s ease-out;
+        }
+
+        footer {
+            background: #000;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: #d0ff3d;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Fondo de la imagen -->
+<div class="background-image"></div>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-md sticky-top border-bottom">
+    <div class="container">
+        <a class="navbar-brand" href="Index.html">
+            <img src="Recurso 3-8.png" alt="ABBE Studio" style="height: 40px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item ms-1"><a class="nav-link" href="Index.html">Inicio</a></li>
+                <li class="nav-item ms-1"><a class="nav-link" href="Quiensoy.html">Quién Soy?</a></li>
+                <li class="nav-item ms-1"><a class="nav-link" href="https://ko-fi.com/meimeidesings">Tienda</a></li>
+                <li class="nav-item dropdown ms-1">
+                    <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Portafolio
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="Branding.html">Branding</a></li>
+                        <li><a class="dropdown-item" href="Editorial.html">Editorial</a></li>
+                        <li><a class="dropdown-item" href="Publicidad.html">Publicidad</a></li>
+                        <li><a class="dropdown-item" href="Ilustración.html">Ilustración</a></li>
+                        <li><a class="dropdown-item" href="Multimedia.html">Multimedia</a></li>
+                        <li><a class="dropdown-item" href="Fotografia.html">Fotografía</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item ms-1"><a class="nav-link" href="Contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="main-content">
+    <div class="container">
+        <div class="row">
+            <div class="banner-container text-center" style="background-color: rgba(0, 0, 0, 0.3); padding: 20px; border-radius: 10px; width: 80%; margin: 0 auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+                <h1>PUBLICIDAD</h1>
+                <p>Es el arte de captar la atención y transmitir mensajes impactantes a través de diseños visuales estratégicos, diseñados para atraer y conectar con el público de manera efectiva.</p>
+            </div>
+        </div>
+
+        <!-- Cards -->
+        <div class="cards-container">
+            <!-- Card 1 -->
+            <div class="card">
+                <h3><strong>TIPOGRÁFICO</strong></h3>
+                <p>Los posters tipográficos buscan destacar la fuerza visual de las palabras y su disposición en el espacio. Este estilo juega con las formas y los tamaños para crear un mensaje que impacte y sea memorable.</p>
+
+                <!-- Carrusel 1 -->
+                <div id="carouselABBE" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="Publicidad\Mesa de trabajo 2.png" class="d-block w-100" alt="Imagen 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="Publicidad\Mesa de trabajo 5.png" class="d-block w-100" alt="Imagen 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="Publicidad\Mesa de trabajo 4.png" class="d-block w-100" alt="Imagen 3">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselABBE" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselABBE" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </button>
+                </div>
+                
+            </div>
+
+             <!-- Card 2 -->
+                <div class="card">
+                    <h3><strong>COMERCIAL</strong></h3>
+                    <p>Los posters comerciales están diseñados para captar la atención rápidamente y comunicar un mensaje claro, persuasivo y visualmente atractivo. Su propósito principal es promover productos o servicios.</p>
+
+                    <!-- Carrusel 2 -->
+                    <div id="carouselABBE2" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="Publicidad\The bloody mary oyu.png" class="d-block w-100" alt="Imagen 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="Publicidad\Hamburguesas (1).png" class="d-block w-100" alt="Imagen 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="Publicidad\Organic.png" class="d-block w-100" alt="Imagen 3">
+                            </div>
+							<div class="carousel-item">
+                                <img src="Publicidad\PÑoster 1.png" class="d-block w-100" alt="Imagen 3">
+                            </div>
+							<div class="carousel-item">
+                                <img src="Publicidad\zxvzvzv-min.png" class="d-block w-100" alt="Imagen 3">
+                            </div>
+							<div class="carousel-item">
+                                <img src="Publicidad\Folleto-03.png" class="d-block w-100" alt="Imagen 3">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselABBE2" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselABBE2" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2024 ABBEstudio</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
